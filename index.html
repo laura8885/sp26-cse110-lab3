@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Meeting Minutes</title>
     <meta charset="UTF-8">
+    <title>Meeting Minutes</title>
     <link rel="icon" href="favicon.ico">
 </head>
 
@@ -17,7 +17,8 @@
 
     <nav>
         <a href="#attendance">Attendance</a><br>
-        <a href="#agenda">Agenda</a>
+        <a href="#agenda">Agenda</a><br>
+        <a href="#form">Feedback Form</a>
     </nav>
 
     <main>
@@ -64,14 +65,16 @@
         <section>
             <h2>Audio Recording</h2>
             <audio controls>
-                <source src="audio.mp3" type="audio/mpeg">
+                <source src="audio.m4a" type="audio/mp4">
+                Your browser does not support audio.
             </audio>
         </section>
 
         <section>
             <h2>Video Recording</h2>
             <video controls width="300">
-                <source src="video.mov" type="video/mov">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support video.
             </video>
         </section>
 
@@ -80,52 +83,57 @@
             <p>Hidden notes about meeting</p>
         </details>
 
+        <section id="form">
+            <h2>Feedback Form</h2>
+
+            <form>
+                <fieldset>
+                    <legend>Feedback Form</legend>
+
+                    <label>Name:</label>
+                    <input type="text"><br><br>
+
+                    <label>Date:</label>
+                    <input type="date"><br><br>
+
+                    <label>Choose one:</label><br>
+                    <input type="radio" name="choice"> Option 1
+                    <input type="radio" name="choice"> Option 2<br><br>
+
+                    <label>Check all that apply:</label><br>
+                    <input type="checkbox"> A
+                    <input type="checkbox"> B<br><br>
+
+                    <label>Comments:</label><br>
+                    <textarea placeholder="Comments"></textarea><br><br>
+
+                    <label>Choose topic:</label>
+                    <select>
+                        <option>UI</option>
+                        <option>Backend</option>
+                    </select><br><br>
+
+                    <label>Tools:</label>
+                    <input list="tools">
+                    <datalist id="tools">
+                        <option value="VSCode">
+                        <option value="GitHub">
+                    </datalist><br><br>
+
+                    <button type="submit">Submit</button>
+
+                </fieldset>
+            </form>
+        </section>
+
+        <div>Example div</div>
+        <span>Example span</span>
+
     </main>
 
     <footer>
         <p>Meeting Minutes Footer</p>
     </footer>
-
-    <!-- FORM -->
-    <form>
-        <fieldset>
-            <legend>Feedback Form</legend>
-
-            <label>Name:</label>
-            <input type="text"><br>
-
-            <label>Date:</label>
-            <input type="date"><br>
-
-            <label>Choose one:</label>
-            <input type="radio" name="choice"> Option 1
-            <input type="radio" name="choice"> Option 2<br>
-
-            <label>Check all that apply:</label>
-            <input type="checkbox"> A
-            <input type="checkbox"> B<br>
-
-            <textarea placeholder="Comments"></textarea><br>
-
-            <label>Choose topic:</label>
-            <select>
-                <option>UI</option>
-                <option>Backend</option>
-            </select><br>
-
-            <input list="tools">
-            <datalist id="tools">
-                <option value="VSCode">
-                <option value="GitHub">
-            </datalist><br>
-
-            <button type="submit">Submit</button>
-
-        </fieldset>
-    </form>
-
-    <div>Example div</div>
-    <span>Example span</span>
 
 </body>
 
