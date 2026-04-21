@@ -1,4 +1,8 @@
-/* ===== ISSUE 3: BASE SETUP ===== */
+body {
+  background: red !important;
+}
+
+/*/* ===== ISSUE 3: BASE SETUP ===== */
 
 * {
   font-family: Arial, sans-serif;
@@ -345,4 +349,4 @@ body {
 /* Link styling baseline */
 a {
   text-decoration: none;
-}
+} */
