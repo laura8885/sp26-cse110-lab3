@@ -7,41 +7,40 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Internal CSS (REQUIRED) -->
     <style>
-      body {
-        border: 2px dashed red;
-      }
+        body {
+            border: 2px dashed red;
+        }
     </style>
 </head>
 
-<body>
+<body id="page">
 
     <header id="main-header">
         <h1 class="title">Pomodoro Timer First Brainstorm</h1>
-        <h2>Brainstorming Session</h2>
+        <h2 class="subtitle">Brainstorming Session</h2>
         <h3>Date: April 11, 2026</h3>
     </header>
 
-    <nav class="nav-bar">
-        <a href="#attendance">Attendance</a><br>
-        <a href="#agenda">Agenda</a><br>
-        <a href="#form">Feedback Form</a>
+    <nav class="nav">
+        <a href="#attendance">Attendance</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#form">Form</a>
     </nav>
 
-    <main class="container">
+    <main class="grid-container">
 
-        <section id="attendance">
+        <section id="attendance" class="card">
             <h2>Attendance</h2>
             <ul>
-                <li><strong>Alice</strong></li>
-                <li><b>Bob</b></li>
-                <li><em>Charlie</em></li>
+                <li>Alice</li>
+                <li>Bob</li>
+                <li>Charlie</li>
             </ul>
         </section>
 
-        <hr>
-
-        <section id="agenda">
+        <section id="agenda" class="card">
             <h2>Agenda</h2>
             <ol>
                 <li>Discuss features</li>
@@ -49,95 +48,70 @@
             </ol>
         </section>
 
-        <section>
+        <section class="card highlight-section">
             <h2>Unfinished Business</h2>
             <p>Previous UI design not finalized.</p>
         </section>
 
-        <section>
+        <section class="card">
             <h2>New Business</h2>
             <p>Discuss adding timer notifications.</p>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Comments</h2>
-            <p class="highlight">Need better UX design <br> Add sound alerts</p>
+            <p class="highlight">Need better UX design</p>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Diagram</h2>
-            <img src="diagram.png" alt="System Diagram" width="300">
+            <img src="diagram.png" alt="System Diagram">
         </section>
 
-        <section>
-            <h2>Audio Recording</h2>
+        <section class="card">
+            <h2>Audio</h2>
             <audio controls>
                 <source src="audio.mp3" type="audio/mpeg">
             </audio>
         </section>
 
-        <section>
-            <h2>Video Recording</h2>
+        <section class="card">
+            <h2>Video</h2>
             <video controls width="300">
                 <source src="video.mp4" type="video/mp4">
             </video>
         </section>
 
+        <div class="box-example">Box Example</div>
+        <span class="inline-example">Span Example</span>
+
         <details>
-            <summary>Click for Extra Info</summary>
-            <p>Hidden notes about meeting</p>
+            <summary>Extra</summary>
+            <p>Hidden notes</p>
         </details>
 
-        <section id="form">
+        <section id="form" class="card">
             <h2>Feedback Form</h2>
 
             <form>
                 <fieldset>
-                    <legend>Feedback Form</legend>
+                    <legend>Form</legend>
 
                     <label>Name:</label>
-                    <input type="text"><br><br>
+                    <input type="text">
 
                     <label>Date:</label>
-                    <input type="date"><br><br>
+                    <input type="date">
 
-                    <label>Choose one:</label><br>
-                    <input type="radio" name="choice"> Option 1
-                    <input type="radio" name="choice"> Option 2<br><br>
-
-                    <label>Check all that apply:</label><br>
-                    <input type="checkbox"> A
-                    <input type="checkbox"> B<br><br>
-
-                    <label>Comments:</label><br>
-                    <textarea></textarea><br><br>
-
-                    <label>Choose topic:</label>
-                    <select>
-                        <option>UI</option>
-                        <option>Backend</option>
-                    </select><br><br>
-
-                    <label>Tools:</label>
-                    <input list="tools">
-                    <datalist id="tools">
-                        <option value="VSCode">
-                        <option value="GitHub">
-                    </datalist><br><br>
-
-                    <button type="submit">Submit</button>
-
+                    <button style="background: orange;">Submit</button>
                 </fieldset>
             </form>
         </section>
 
-        <div>Example div</div>
-        <span>Example span</span>
-
     </main>
 
-    <footer>
-        <p>Meeting Minutes Footer</p>
+    <footer class="footer">
+        Meeting Minutes Footer
     </footer>
 
 </body>
