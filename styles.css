@@ -1,14 +1,10 @@
-/* =========================
-BASE SETUP
-========================= */
+/* BASE SETUP */
 
 * {
     font-family: Arial, sans-serif;
 }
 
-/* =========================
-COLORS + VARIABLES
-========================= */
+/* COLORS + VARIABLES */
 
 :root {
     --main-color: hsl(210, 70%, 40%);
@@ -20,29 +16,23 @@ body {
     background-color: #f5f5f5;
     color: rgb(30, 30, 30);
 
-    /* color-mix (REQUIRED) */
     background-color: color-mix(in srgb, white 85%, lightblue);
 }
 
-/* Wider gamut color */
 .title {
     color: color(display-p3 1 0 0);
 }
 
-/* fallback variable */
 h1 {
     color: var(--main-color, blue);
 }
 
-/* multiple color formats */
 .hex { color: #ff5733; }
 .rgb { color: rgb(100, 50, 200); }
 .hsl { color: hsl(120, 60%, 40%); }
 
 
-/* =========================
-TEXT
-========================= */
+/* TEXT */
 
 p {
     color: navy;
@@ -54,10 +44,17 @@ h2 {
     text-align: center;
 }
 
+/* Image*/
 
-/* =========================
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*
 BOX MODEL (LONG + SHORT)
-========================= */
+ */
 
 .card {
     margin-top: 20px;
@@ -73,7 +70,7 @@ BOX MODEL (LONG + SHORT)
     border-radius: 10px;
 }
 
-/* shorthand */
+
 .footer {
     margin: 10px 20px;
     padding: 15px;
@@ -81,22 +78,18 @@ BOX MODEL (LONG + SHORT)
 }
 
 
-/* =========================
-UNITS (ALL REQUIRED)
-========================= */
+/* UNITS (ALL REQUIRED) */
 
 .card {
-    width: 80%;        /* relative % */
+    width: 80%;        
     max-width: 900px;
-    font-size: 1.2em;  /* relative em */
-    padding: 2rem;     /* relative rem */
-    margin: 20px;      /* px absolute */
+    font-size: 1.2em;  
+    padding: 2rem;     
+    margin: 20px;      
 }
 
 
-/* =========================
-DISPLAY
-========================= */
+/* DISPLAY */
 
 .box-example {
     display: inline-block;
@@ -107,9 +100,7 @@ DISPLAY
 }
 
 
-/* =========================
-POSITION
-========================= */
+/* POSITION */
 
 .footer {
     position: sticky;
@@ -117,9 +108,7 @@ POSITION
 }
 
 
-/* =========================
-FLEXBOX
-========================= */
+/* FLEXBOX */
 
 .nav {
     display: flex;
@@ -128,9 +117,7 @@ FLEXBOX
 }
 
 
-/* =========================
-GRID
-========================= */
+/* GRID */
 
 .grid-container {
     display: grid;
@@ -139,9 +126,7 @@ GRID
 }
 
 
-/* =========================
-PSEUDO CLASSES
-========================= */
+/* PSEUDO CLASSES */
 
 button:hover {
     background-color: blue;
@@ -152,37 +137,28 @@ button:active {
     transform: scale(0.95);
 }
 
+/* SELECTORS (ALL TYPES) */
 
-/* =========================
-SELECTORS (ALL TYPES)
-========================= */
-
-/* element */
 section {
     border: 1px solid #ccc;
 }
 
-/* class */
 .highlight {
     background: yellow;
 }
 
-/* id */
 #attendance {
     border-color: red;
 }
 
-/* attribute */
 input[type="text"] {
     border: 1px solid black;
 }
 
-/* selector list */
 h1, h2, h3 {
     font-family: Georgia;
 }
 
-/* combinators */
 section p {
     font-style: italic;
 }
@@ -199,34 +175,27 @@ h2 ~ p {
     text-decoration: underline;
 }
 
-/* combining selectors */
 section.card {
     background: white;
 }
 
-/* :has() REQUIRED */
 section:has(ul) {
     border: 2px solid red;
 }
 
-/* pseudo class selector */
 p:hover {
     color: green;
 }
 
 
-/* =========================
-DISPLAY VARIANTS
-========================= */
+/* DISPLAY VARIANTS */
 
 div {
     display: block;
 }
 
 
-/* =========================
-RESPONSIVENESS
-========================= */
+/* RESPONSIVENESS */
 
 @media (max-width: 768px) {
     .nav {
