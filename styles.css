@@ -1,0 +1,186 @@
+/* ===== ISSUE 1: LAYOUT, RESPONSIVENESS, ADVANCED SELECTORS ===== */
+
+/* Flexbox */
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Grid */
+.main-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* Positioning */
+.fixed-box {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.relative-box {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+/* Display */
+.inline-example { display: inline; }
+.block-example { display: block; }
+.inline-block-example { display: inline-block; }
+
+/* Pseudo-classes */
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Combinators */
+section p { font-style: italic; }
+div > p { color: green; }
+h2 + p { font-weight: bold; }
+h2 ~ p { text-decoration: underline; }
+
+/* Selector list */
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+/* Attribute selector */
+a[href] {
+  color: purple;
+}
+
+/* Combining selectors */
+p.highlight {
+  background-color: yellow;
+}
+
+/* :has() */
+section:has(p) {
+  border: 2px solid red;
+}
+
+/* Nested selector */
+nav {
+  background: lightblue;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+/* Media query */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background-color: white;
+  }
+}
+
+
+/* ===== ISSUE 2: STYLING (COLORS, BOX MODEL, TEXT, UNITS) ===== */
+
+/* Colors */
+body {
+  background-color: #f5f5f5;
+  color: rgb(30, 30, 30);
+}
+
+h2 {
+  color: hsl(200, 70%, 40%);
+}
+
+/* CSS variable with fallback */
+:root {
+  --main-color: hsl(210, 70%, 40%);
+}
+
+h1 {
+  color: var(--main-color, blue);
+  text-align: center;
+}
+
+/* Text */
+p {
+  color: navy;
+  text-align: left;
+}
+
+/* Units */
+.container {
+  width: 80%;
+  max-width: 900px;
+  font-size: 1.2em;
+  margin: 20px auto;
+}
+
+/* Box model (longhand) */
+section {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+/* Box model (shorthand) */
+.card {
+  margin: 10px 20px;
+  padding: 15px 20px;
+  border: 1px solid gray;
+}
+
+/* More colors */
+.hex-example { color: #ff5733; }
+.rgb-example { color: rgb(100, 50, 200); }
+.hsl-example { color: hsl(120, 60%, 40%); }
+
+/* Background */
+header {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== ISSUE 3: SETUP (BASE CSS CONNECTION WORK) ===== */
+
+/* Universal selector */
+* {
+  font-family: Arial, sans-serif;
+}
+
+/* Body reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Link styling baseline */
+a {
+  text-decoration: none;
+}
