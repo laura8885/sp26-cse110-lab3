@@ -4,7 +4,7 @@
 
 ---
 
-## Team Member: Laura Karry
+## Team Member: Zihan Zhang
 
 ---
 
