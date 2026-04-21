@@ -6,23 +6,29 @@
     <title>Meeting Minutes</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+      body {
+        border: 2px dashed red;
+      }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Pomodoro Timer First Brainstorm</h1>
+    <header id="main-header">
+        <h1 class="title">Pomodoro Timer First Brainstorm</h1>
         <h2>Brainstorming Session</h2>
         <h3>Date: April 11, 2026</h3>
     </header>
 
-    <nav>
+    <nav class="nav-bar">
         <a href="#attendance">Attendance</a><br>
         <a href="#agenda">Agenda</a><br>
         <a href="#form">Feedback Form</a>
     </nav>
 
-    <main>
+    <main class="container">
 
         <section id="attendance">
             <h2>Attendance</h2>
@@ -55,7 +61,7 @@
 
         <section>
             <h2>Comments</h2>
-            <p>Need better UX design <br> Add sound alerts</p>
+            <p class="highlight">Need better UX design <br> Add sound alerts</p>
         </section>
 
         <section>
@@ -66,8 +72,7 @@
         <section>
             <h2>Audio Recording</h2>
             <audio controls>
-                <source src="audio.m4a" type="audio/mp4">
-                Your browser does not support audio.
+                <source src="audio.mp3" type="audio/mpeg">
             </audio>
         </section>
 
@@ -75,7 +80,6 @@
             <h2>Video Recording</h2>
             <video controls width="300">
                 <source src="video.mp4" type="video/mp4">
-                Your browser does not support video.
             </video>
         </section>
 
@@ -106,7 +110,7 @@
                     <input type="checkbox"> B<br><br>
 
                     <label>Comments:</label><br>
-                    <textarea placeholder="Comments"></textarea><br><br>
+                    <textarea></textarea><br><br>
 
                     <label>Choose topic:</label>
                     <select>
@@ -137,5 +141,4 @@
     </footer>
 
 </body>
-
 </html>
