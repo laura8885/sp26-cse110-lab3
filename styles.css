@@ -9,9 +9,9 @@
     --fallback-color: orange;
 }
 
-/* =========================
+/* ========================
    BASE SETUP
-========================= */
+======================== */
 * {
     box-sizing: border-box;
     font-family: "Inter", Arial, sans-serif;
