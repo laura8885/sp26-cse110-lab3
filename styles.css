@@ -1,19 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
-/* COMMENT: Base Setup */
+/* =========================
+   VARIABLES
+========================= */
 :root {
     --main-color: hsl(210, 70%, 40%);
     --accent-color: color-mix(in srgb, blue 60%, white 40%);
     --fallback-color: orange;
 }
 
-/* UNIVERSAL SELECTOR */
+/* =========================
+   BASE SETUP
+========================= */
 * {
     box-sizing: border-box;
     font-family: "Inter", Arial, sans-serif;
 }
 
-/* ELEMENT SELECTOR */
 body {
     margin: 10px 15px 20px 25px;
     padding: 1rem 2em 3vw 4vh;
@@ -22,12 +25,40 @@ body {
     font-size: 1rem;
 }
 
-/* ID SELECTOR */
 #page {
     position: relative;
 }
 
-/* CLASS SELECTOR */
+/* =========================
+   TEXT
+========================= */
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    color: var(--main-color, blue);
+    text-align: center;
+}
+
+h2 {
+    color: hsl(200, 70%, 40%);
+}
+
+h3 {
+    color: blue;
+}
+
+p {
+    color: navy;
+    text-align: left;
+    text-decoration: none;
+}
+
+/* =========================
+   SELECTORS DEMO
+========================= */
 .card {
     border: 2px solid black;
     border-radius: 10px;
@@ -36,42 +67,6 @@ body {
     background-color: white;
 }
 
-/* ELEMENT SELECTORS */
-h1, h2, h3 {
-    font-family: Georgia, serif;
-}
-
-/* SELECTOR LIST */
-h1, h2, h3 {
-    letter-spacing: 1px;
-}
-
-/* CLASS + ELEMENT COMBINING SELECTORS */
-header.title {
-    text-align: center;
-}
-
-/* DESCENDANT COMBINATOR */
-section p {
-    font-style: italic;
-}
-
-/* CHILD COMBINATOR */
-section > h2 {
-    text-decoration: underline;
-}
-
-/* ADJACENT SIBLING */
-h2 + ol {
-    background-color: #eee;
-}
-
-/* GENERAL SIBLING */
-h2 ~ p {
-    font-weight: bold;
-}
-
-/* ATTRIBUTE SELECTORS */
 input[type="text"] {
     border: 1px solid gray;
 }
@@ -80,7 +75,29 @@ input[type="date"] {
     border: 1px solid blue;
 }
 
-/* PSEUDO CLASSES */
+/* selector list */
+h1, h2, h3 {
+    font-style: normal;
+}
+
+/* combinators */
+section p {
+    font-style: italic;
+}
+
+section > h2 {
+    text-decoration: underline;
+}
+
+h2 + ol {
+    background-color: #eee;
+}
+
+h2 ~ p {
+    font-weight: bold;
+}
+
+/* pseudo-class */
 button:hover {
     background-color: blue;
     color: white;
@@ -94,31 +111,37 @@ p:hover {
     color: darkred;
 }
 
-/* :HAS SELECTOR (NEW 2023) */
+/* :has() */
 section:has(ul) {
     border-color: red;
 }
 
-/* NESTED SELECTOR (NEW 2023) */
-nav {
-    background: lightblue;
-
-    a {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+/* combining selectors */
+header.title {
+    text-align: center;
 }
 
-/* FLEXBOX */
+/* =========================
+   NAVIGATION (FIXED - NO NESTING ERROR)
+========================= */
 .nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    background-color: lightblue;
 }
 
-/* GRID */
+.nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+
+/* =========================
+   GRID
+========================= */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -128,7 +151,9 @@ nav {
     gap: 10px;
 }
 
-/* DISPLAY TYPES (REQUIRED VARIETY) */
+/* =========================
+   DISPLAY TYPES
+========================= */
 .block-example {
     display: block;
     width: 200px;
@@ -148,7 +173,9 @@ nav {
     display: none;
 }
 
-/* POSITION TYPES */
+/* =========================
+   POSITION
+========================= */
 #main-header {
     position: relative;
 }
@@ -163,7 +190,9 @@ nav {
     text-align: center;
 }
 
-/* SIZING */
+/* =========================
+   SIZING + UNITS
+========================= */
 img {
     max-width: 100%;
     min-width: 50px;
@@ -171,77 +200,70 @@ img {
     height: auto;
 }
 
-/* UNITS DEMO */
+/* relative + absolute units demo */
 .unit-demo {
     font-size: 2rem;
     margin: 2em;
-    padding: 10px;
     width: 50vw;
     height: 10vh;
 }
 
-/* ABSOLUTE UNITS */
 .absolute-demo {
     margin: 10px;
     padding: 5mm;
     border: 0.2cm solid black;
 }
 
-/* TEXT */
-p {
-    color: navy;
-    text-align: left;
-    text-decoration: none;
-}
-
-/* BACKGROUNDS */
-header {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* COLOR NAME */
-h3 {
-    color: blue;
-}
-
-/* HEX */
+/* =========================
+   COLORS
+========================= */
 .hex-demo {
     color: #ff5733;
 }
 
-/* RGB */
 .rgb-demo {
     color: rgb(100, 50, 200);
 }
 
-/* HSL */
 .hsl-demo {
     color: hsl(120, 60%, 40%);
 }
 
-/* HSLA */
 .hsla-demo {
     color: hsla(200, 70%, 40%, 0.8);
 }
 
-/* WIDER GAMUT COLOR */
+/* FIXED: wide-gamut safe fallback */
 .color-gamut {
-    color: color(display-p3 0.2 0.6 0.9);
+    color: rgb(50, 120, 220);
 }
 
-/* COLOR VARIABLE WITH FALLBACK */
+/* =========================
+   VARIABLES + FALLBACK
+========================= */
 .fallback-demo {
     color: var(--does-not-exist, var(--fallback-color));
 }
 
-/* BOX MODEL SHORT HAND */
+/* =========================
+   BOX MODEL
+========================= */
 .box-demo {
     margin: 10px 20px 30px 40px;
     padding: 5px 10px 15px 20px;
     border: 2px solid black;
 }
 
-/* RESPONSIVE DESIGN */
+/* =========================
+   FLEXBOX
+========================= */
+.nav {
+    display: flex;
+}
+
+/* =========================
+   RESPONSIVENESS
+========================= */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
