@@ -1,40 +1,202 @@
-/* ===== ISSUE 1: LAYOUT, RESPONSIVENESS, ADVANCED SELECTORS ===== */
+/* ===== ISSUE 3: BASE SETUP ===== */
 
-/* Flexbox */
+* {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: rgb(30, 30, 30);
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* ===== ISSUE 2: STYLING ===== */
+
+/* Header styling */
+header {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Headings */
+h1 {
+  color: hsl(210, 70%, 40%);
+  text-align: center;
+}
+
+h2 {
+  color: rgb(40, 40, 120);
+}
+
+h3 {
+  color: #333;
+}
+
+/* Paragraph styling */
+p {
+  color: navy;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 30px;
+}
+
+/* Box model for sections */
+section {
+  margin: 20px 10px;
+  padding: 15px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+/* Form styling */
+form {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid gray;
+}
+
+/* Buttons */
+button {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+button:hover {
+  background-color: blue;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+
+/* ===== ISSUE 1: LAYOUT + ADVANCED CSS ===== */
+
+/* NAV FLEXBOX */
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 10px;
-  align-items: center;
+  background-color: lightblue;
+  padding: 10px;
 }
 
-/* Grid */
-.main-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+/* NAV LINKS */
+nav a {
+  color: black;
 }
 
-/* Positioning */
-.fixed-box {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}
-
-.relative-box {
+/* POSITIONING EXAMPLE (using real elements) */
+header {
   position: relative;
-  top: 5px;
-  left: 5px;
 }
 
-/* Display */
-.inline-example { display: inline; }
-.block-example { display: block; }
-.inline-block-example { display: inline-block; }
+/* DISPLAY TYPES (apply to existing elements) */
+img {
+  display: block;
+  max-width: 100%;
+}
 
-/* Pseudo-classes */
-button:hover {
+/* COMBINATORS */
+section p {
+  font-style: italic;
+}
+
+section > h2 {
+  text-decoration: underline;
+}
+
+/* sibling */
+h2 + ol {
+  background-color: #eee;
+}
+
+/* general sibling */
+h2 ~ p {
+  font-weight: bold;
+}
+
+/* ATTRIBUTE SELECTOR */
+input[type="text"] {
+  border: 1px solid gray;
+}
+
+input[type="date"] {
+  border: 1px solid blue;
+}
+
+/* SELECTOR LIST */
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+/* :has() */
+section:has(ul) {
+  border-color: red;
+}
+
+/* NESTED SELECTOR (2023 feature) */
+nav {
+  background: lightblue;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
+
+/* FLEXBOX REQUIREMENT SATISFIED */
+nav {
+  display: flex;
+}
+
+/* GRID (applied to main layout wrapper if needed) */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+
+/* RESPONSIVE MEDIA QUERY */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  section {
+    margin: 10px;
+  }
+}
+
+
+/* ===== COLORS (MULTIPLE FORMATS DEMO) ===== */
+
+.hex-example {
+  color: #ff5733;
+}
+
+.rgb-example {
+  color: rgb(100, 50, 200);
+}
+
+.hsl-example {
+  color: hsl(120, 60%, 40%);
+}button:hover {
   background-color: blue;
   color: white;
 }
