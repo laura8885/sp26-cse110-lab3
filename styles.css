@@ -1,4 +1,6 @@
-/* ===== ISSUE 3: BASE SETUP ===== */
+/* =========================
+ISSUE 3 — BASE SETUP
+========================= */
 
 * {
   font-family: Arial, sans-serif;
@@ -16,39 +18,40 @@ a {
 }
 
 
-/* ===== ISSUE 2: STYLING ===== */
+/* =========================
+ISSUE 2 — STYLING
+========================= */
 
-/* Header styling */
-header {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px;
+/* Colors */
+:root {
+  --main-color: hsl(210, 70%, 40%);
 }
 
-/* Headings */
 h1 {
-  color: hsl(210, 70%, 40%);
+  color: var(--main-color, blue);
   text-align: center;
 }
 
 h2 {
-  color: rgb(40, 40, 120);
+  color: hsl(200, 70%, 40%);
 }
 
 h3 {
   color: #333;
 }
 
-/* Paragraph styling */
 p {
   color: navy;
+  text-align: left;
 }
 
-/* Lists */
-ul, ol {
-  padding-left: 30px;
+/* Background */
+header {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
-/* Box model for sections */
+/* Box Model */
 section {
   margin: 20px 10px;
   padding: 15px 20px;
@@ -56,12 +59,29 @@ section {
   border-radius: 10px;
 }
 
-/* Form styling */
 form {
   margin: 20px;
   padding: 15px;
   border: 1px solid gray;
 }
+
+/* Shorthand example */
+.card {
+  margin: 10px 20px;
+  padding: 15px 20px;
+  border: 1px solid gray;
+}
+
+/* Units demo */
+.container {
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Colors (required formats) */
+.rgb-example { color: rgb(100, 50, 200); }
+.hex-example { color: #ff5733; }
+.hsl-example { color: hsl(120, 60%, 40%); }
 
 /* Buttons */
 button {
@@ -79,34 +99,37 @@ button:active {
 }
 
 
-/* ===== ISSUE 1: LAYOUT + ADVANCED CSS ===== */
+/* =========================
+ISSUE 1 — LAYOUT + ADVANCED CSS
+========================= */
 
-/* NAV FLEXBOX */
+/* FLEXBOX */
 nav {
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  background-color: lightblue;
+  background: lightblue;
   padding: 10px;
 }
 
-/* NAV LINKS */
-nav a {
-  color: black;
+/* GRID */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
-/* POSITIONING EXAMPLE (using real elements) */
+/* POSITION */
 header {
   position: relative;
 }
 
-/* DISPLAY TYPES (apply to existing elements) */
+/* DISPLAY */
 img {
   display: block;
-  max-width: 100%;
 }
 
-/* COMBINATORS */
+/* PSEUDO + SELECTORS */
 section p {
   font-style: italic;
 }
@@ -115,14 +138,12 @@ section > h2 {
   text-decoration: underline;
 }
 
-/* sibling */
-h2 + ol {
-  background-color: #eee;
+h2 + p {
+  font-weight: bold;
 }
 
-/* general sibling */
 h2 ~ p {
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* ATTRIBUTE SELECTOR */
@@ -130,13 +151,9 @@ input[type="text"] {
   border: 1px solid gray;
 }
 
-input[type="date"] {
-  border: 1px solid blue;
-}
-
-/* SELECTOR LIST */
-h1, h2, h3 {
-  font-family: Georgia, serif;
+/* CLASS + ELEMENT */
+p.highlight {
+  background: yellow;
 }
 
 /* :has() */
@@ -144,205 +161,18 @@ section:has(ul) {
   border-color: red;
 }
 
-/* NESTED SELECTOR (2023 feature) */
-nav {
-  background: lightblue;
-
-  a {
-    text-decoration: none;
-    font-weight: bold;
-  }
-}
-
-
-/* FLEXBOX REQUIREMENT SATISFIED */
-nav {
-  display: flex;
-}
-
-/* GRID (applied to main layout wrapper if needed) */
-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-
-/* RESPONSIVE MEDIA QUERY */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  body {
-    background-color: white;
-  }
-
-  section {
-    margin: 10px;
-  }
-}
-
-
-/* ===== COLORS (MULTIPLE FORMATS DEMO) ===== */
-
-.hex-example {
-  color: #ff5733;
-}
-
-.rgb-example {
-  color: rgb(100, 50, 200);
-}
-
-.hsl-example {
-  color: hsl(120, 60%, 40%);
-}button:hover {
-  background-color: blue;
-  color: white;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-/* Combinators */
-section p { font-style: italic; }
-div > p { color: green; }
-h2 + p { font-weight: bold; }
-h2 ~ p { text-decoration: underline; }
-
-/* Selector list */
+/* SELECTOR LIST */
 h1, h2, h3 {
   font-family: Georgia, serif;
 }
 
-/* Attribute selector */
-a[href] {
-  color: purple;
-}
-
-/* Combining selectors */
-p.highlight {
-  background-color: yellow;
-}
-
-/* :has() */
-section:has(p) {
-  border: 2px solid red;
-}
-
-/* Nested selector */
-nav {
-  background: lightblue;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-}
-
-/* Media query */
+/* MEDIA QUERY */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-  }
-
-  .main-section {
-    grid-template-columns: 1fr;
   }
 
   body {
     background-color: white;
   }
 }
-
-
-/* ===== ISSUE 2: STYLING (COLORS, BOX MODEL, TEXT, UNITS) ===== */
-
-/* Colors */
-body {
-  background-color: #f5f5f5;
-  color: rgb(30, 30, 30);
-}
-
-h2 {
-  color: hsl(200, 70%, 40%);
-}
-
-/* CSS variable with fallback */
-:root {
-  --main-color: hsl(210, 70%, 40%);
-}
-
-h1 {
-  color: var(--main-color, blue);
-  text-align: center;
-}
-
-/* Text */
-p {
-  color: navy;
-  text-align: left;
-}
-
-/* Units */
-.container {
-  width: 80%;
-  max-width: 900px;
-  font-size: 1.2em;
-  margin: 20px auto;
-}
-
-/* Box model (longhand) */
-section {
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-
-  padding-top: 10px;
-  padding-right: 15px;
-  padding-bottom: 20px;
-  padding-left: 25px;
-
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
-  border-radius: 10px;
-}
-
-/* Box model (shorthand) */
-.card {
-  margin: 10px 20px;
-  padding: 15px 20px;
-  border: 1px solid gray;
-}
-
-/* More colors */
-.hex-example { color: #ff5733; }
-.rgb-example { color: rgb(100, 50, 200); }
-.hsl-example { color: hsl(120, 60%, 40%); }
-
-/* Background */
-header {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-
-/* ===== ISSUE 3: SETUP (BASE CSS CONNECTION WORK) ===== */
-
-/* Universal selector */
-* {
-  font-family: Arial, sans-serif;
-}
-
-/* Body reset */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Link styling baseline */
-a {
-  text-decoration: none;
-} 
